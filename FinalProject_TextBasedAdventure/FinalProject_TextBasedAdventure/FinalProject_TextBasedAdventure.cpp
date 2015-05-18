@@ -9,12 +9,11 @@
 #include "Player.h"
 using namespace std;
 
+ifstream gamesaveIN ("C:/Users/duehlste001/Documents/Visual Studio 2013/Projects/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
+ofstream gamesaveOUT; //("C:/Users/duehlste001/Documents/Visual Studio 2013/Projects/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-	
-	return 0;
-}
+
+
 
 void Attack()
 {
@@ -40,3 +39,18 @@ void Attack()
 
 	cout << endl;
 }
+
+void gamesave()
+{
+	int health = 100;
+	gamesaveOUT.open("C:/Users/duehlste001/Documents/Visual Studio 2013/Projects/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
+	gamesaveOUT;
+}
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	gamesave();
+	return 0;
+}
+
