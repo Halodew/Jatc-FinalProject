@@ -1,0 +1,18 @@
+﻿Build started 5/18/2015 8:28:34 AM.
+     1>Project "C:\Users\duehlste001\Documents\Visual Studio 2013\Projects\FinalProject_TextBasedAdventure\FinalProject_TextBasedAdventure\FinalProject_TextBasedAdventure.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\FinalProject_TextBasedAdventure.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt FinalProject_TextBasedAdventure.cpp GameSave.cpp
+         GameSave.cpp
+         FinalProject_TextBasedAdventure.cpp
+     1>c:\users\duehlste001\documents\visual studio 2013\projects\finalproject_textbasedadventure\finalproject_textbasedadventure\weapons.h(26): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\duehlste001\Documents\Visual Studio 2013\Projects\FinalProject_TextBasedAdventure\Debug\FinalProject_TextBasedAdventure.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\duehlste001\Documents\Visual Studio 2013\Projects\FinalProject_TextBasedAdventure\Debug\FinalProject_TextBasedAdventure.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\duehlste001\Documents\Visual Studio 2013\Projects\FinalProject_TextBasedAdventure\Debug\FinalProject_TextBasedAdventure.lib" /MACHINE:X86 Debug\FinalProject_TextBasedAdventure.obj
+         Debug\GameSave.obj
+         Debug\stdafx.obj
+         FinalProject_TextBasedAdventure.vcxproj -> C:\Users\duehlste001\Documents\Visual Studio 2013\Projects\FinalProject_TextBasedAdventure\Debug\FinalProject_TextBasedAdventure.exe
+     1>Done Building Project "C:\Users\duehlste001\Documents\Visual Studio 2013\Projects\FinalProject_TextBasedAdventure\FinalProject_TextBasedAdventure\FinalProject_TextBasedAdventure.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.82
