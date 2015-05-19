@@ -40,17 +40,64 @@ void Attack()
 	cout << endl;
 }
 
-void gamesave()
+void gamesave(int health)
 {
-	int health = 100;
-	gamesaveOUT.open("C:/Users/duehlste001/Documents/Visual Studio 2013/Projects/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
-	gamesaveOUT;
+	gamesaveOUT.open("C:/Users/duehlste001/Documents/GitHub/Jatc-FinalProject/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
+	gamesaveOUT << "current health: " << health;
+	cout << health << endl;
+	gamesaveOUT.close();
 }
 
+int LoadGame()
+{
+	int health = 100;
+	string health1;
+	int health2;
+	gamesaveIN.open("C:/Users/duehlste001/Documents/GitHub/Jatc-FinalProject/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
+	if(gamesaveIN.is_open() == true)
+	{
+		cout << "game loaded" << endl;
+		cout << health << endl;
+		gamesaveIN >> health1;
+		cout << health1 << " ";
+
+		gamesaveIN >> health2;
+		cout << health2 << endl;
+	}
+	else
+	{
+		cout << "Unable to load game save" << endl;
+	}
+	return health;
+}
+
+void MainMenu()
+{
+	int LoadOption;
+	cout << "	Welcome to the Main Menu	" << endl;
+	cout << endl;
+	cout << "1: Load Game" << endl;
+	cout << "2: New Game" << endl;
+	cin >> LoadOption;
+
+	if (LoadOption == 1)
+	{
+		LoadGame();
+	}
+	else if (LoadOption == 2)
+	{
+		cout << "test2" << endl;
+	}
+
+}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	gamesave();
+	int health = 10;
+
+	MainMenu();
+
+	//gamesave(health);
 	return 0;
 }
 
