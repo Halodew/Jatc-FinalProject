@@ -9,7 +9,22 @@ public:
 	void ZeroWeaponUse(int SwordUse, int BowUse);
 
 	string WeaponSelect;
+	
+
+	int getHealth();
+	int gettargetHealth();
+	int getbow();
+	int getsword();
+
+	void setHealth(int newHealth);
+	void setTargetHealth(int newTargetHealth);
+	void setBow(int newBow);
+	void setSword(int newSword);
+private:
 	int Health = 100;
+	int bow = 20;
+	int sword = 15;
+	int target = 150;
 	
 	
 };
@@ -54,4 +69,42 @@ void Player::ZeroWeaponUse(int SwordUse, int BowUse)
 		cout << ZeroUses << endl;
 	}
 
+}
+
+int Player::getHealth()
+{
+	return Health;
+}
+
+int Player::getbow()
+{
+	return bow;
+}
+
+int Player::getsword()
+{
+	return sword;
+}
+
+int Player::gettargetHealth()
+{
+	return target;
+}
+
+
+void Player::setHealth(int newHealth)
+{
+	Health = newHealth;
+}
+void Player::setTargetHealth(int newTargetHealth)
+{
+	target = newTargetHealth;
+}
+void Player::setBow(int newBow)
+{
+	bow = newBow;
+}
+void Player::setSword(int newSword)
+{
+	sword = newSword;
 }

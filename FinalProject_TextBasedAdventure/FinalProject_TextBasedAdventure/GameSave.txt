@@ -1,1 +1,4 @@
 current_health: 100
+targets_current_health: 150
+Number_of_bow_uses_left: 20
+Number_of_sword_uses_left: 15
