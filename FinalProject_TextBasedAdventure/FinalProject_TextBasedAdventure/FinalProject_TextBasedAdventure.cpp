@@ -7,24 +7,18 @@
 #include <iostream>
 #include "Weapons.h"
 #include "Player.h"
+
 using namespace std;
 
 ifstream gamesaveIN ("C:/Users/duehlste001/Documents/Visual Studio 2013/Projects/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
 ofstream gamesaveOUT; //("C:/Users/duehlste001/Documents/Visual Studio 2013/Projects/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
 
-void SaveGame(int& health, int& target, int& bow, int& sword)
-{
-	gamesaveOUT.open("C:/Users/duehlste001/Documents/GitHub/Jatc-FinalProject/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
-
-	gamesaveOUT << "current_health: " << health << endl;
-	gamesaveOUT << "targets_current_health: " << target << endl;
-	gamesaveOUT << "Number_of_bow_uses_left: " << bow << endl;
-	gamesaveOUT << "Number_of_sword_uses_left: " << sword << endl;
 
 
-	cout << "Game Saved" << endl;
-	gamesaveOUT.close();
-}
+
+
+
+
 void LoadGame()
 {
 	Player player1;
@@ -66,13 +60,27 @@ void LoadGame()
 	}
 
 }
-int MainMenu(int target)
+void SaveGame(int& health, int& target, int& bow, int& sword)
+{
+	gamesaveOUT.open("C:/Users/duehlste001/Documents/GitHub/Jatc-FinalProject/FinalProject_TextBasedAdventure/FinalProject_TextBasedAdventure/GameSave.txt");
+
+	gamesaveOUT << "current_health: " << health << endl;
+	gamesaveOUT << "targets_current_health: " << target << endl;
+	gamesaveOUT << "Number_of_bow_uses_left: " << bow << endl;
+	gamesaveOUT << "Number_of_sword_uses_left: " << sword << endl;
+
+
+	cout << "Game Saved" << endl;
+	gamesaveOUT.close();
+}
+
+
+void MainMenu(int target)
 {
 	Player player1;
 	int LoadOption;
 	int Health = player1.getHealth();
 	target = player1.gettargetHealth();
-
 
 	cout << "	Welcome to the Main Menu	" << endl;
 	cout << endl;
@@ -99,12 +107,17 @@ int MainMenu(int target)
 		int sword = 15;
 		SaveGame(Health, target, bow, sword);
 	}
-	return Health;
+	int bow = player1.getbow();
+	int sword = player1.getsword();
+
+
+
 }
+
 int Attack(int target, int& bow, int& sword)
 {
 	Player Player1;
-	
+
 	cout << "Select Weapon: ";
 	cin >> Player1.WeaponSelect;
 	Player1.ZeroWeaponUse(sword, bow);
@@ -117,7 +130,7 @@ int Attack(int target, int& bow, int& sword)
 	else if (Player1.WeaponSelect == "sword" || Player1.WeaponSelect == "Sword")
 	{
 		sword = Player1.SwordWeaponUse(sword, Player1.WeaponSelect);
-		target = target -15;
+		target = target - 15;
 	}
 	else if (Player1.WeaponSelect == "save" || Player1.WeaponSelect == "Save")
 	{
@@ -133,16 +146,17 @@ int Attack(int target, int& bow, int& sword)
 
 	return target;
 }
+
 void Battle(int target, int& bow, int& sword)
 {
-	
+
 
 	cout << "your walking down a dark path when a bear attackes you" << endl;
 	while (target > 0)
 	{
 		cout << "bears health: " << target << endl;
 		cout << endl;
-		target = Attack(target, bow, sword);
+		target = Attack(target, bow, sword);                //remeber to add damage taking from target..
 	}
 	if (target <= 0)
 	{
@@ -151,8 +165,10 @@ void Battle(int target, int& bow, int& sword)
 		MainMenu(target);
 	}
 }
+
 void MainGame(int Health, int target, int& bow, int& sword)
 {
+
 	cout << endl;
 	cout << endl;
 
@@ -169,15 +185,17 @@ void MainGame(int Health, int target, int& bow, int& sword)
 
 }
 
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	Player player1;
+	
 	int health = player1.getHealth();
 	int target = player1.gettargetHealth();
 	int bow = player1.getbow();
 	int sword = player1.getsword();
 
-	health = MainMenu(target);
+	 MainMenu(target);
 	
 	MainGame(health,target,bow,sword);
 

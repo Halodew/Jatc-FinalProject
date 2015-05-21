@@ -42,7 +42,6 @@ int Player::BowWeaponUse(int BowUse, string WeaponSelect)
 
 	return BowUse;
 }
-
 int Player::SwordWeaponUse(int SwordUse, string WeaponSelect)
 {
 	if (WeaponSelect == "sword" || WeaponSelect == "Sword")
@@ -52,7 +51,6 @@ int Player::SwordWeaponUse(int SwordUse, string WeaponSelect)
 	}
 	return SwordUse;
 }
-
 void Player::ZeroWeaponUse(int SwordUse, int BowUse)
 {
 	
@@ -71,21 +69,19 @@ void Player::ZeroWeaponUse(int SwordUse, int BowUse)
 
 }
 
+
 int Player::getHealth()
 {
 	return Health;
 }
-
 int Player::getbow()
 {
 	return bow;
 }
-
 int Player::getsword()
 {
 	return sword;
 }
-
 int Player::gettargetHealth()
 {
 	return target;
