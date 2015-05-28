@@ -1,3 +1,5 @@
+#ifndef WEAPONS_H
+#define WEAPONS_H
 
 //used if desited to have weapons with diffent damage values.
 
@@ -28,3 +30,5 @@ int Weapons::DamageMod()
 
 	return Modifer;
 }
+
+#endif
